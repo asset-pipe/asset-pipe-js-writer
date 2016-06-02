@@ -1,0 +1,39 @@
+{
+  "name": "asset-pipe-js-writer",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trygve Lie",
+    "email": "post@trygve-lie.com"
+  },
+  "description": "Javascript asset feed writer",
+  "main": "./lib/writer.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:asset-pipe/asset-pipe-js-writer.git"
+  },
+  "keywords": [
+    "javascript",
+    "assets"
+  ],
+  "contributors": [
+    {
+      "name": "Trygve Lie",
+      "email": "post@trygve-lie.com"
+    }
+  ],
+  "engines": {
+    "node" : "6.x"
+  },
+  "bugs": {
+    "url": "https://github.com/asset-pipe/asset-pipe-js-writer/issues"
+  },
+  "licenses": ["MIT"],
+  "dependencies": {
+    "readable-stream": "2.1.2",
+    "shasum": "1.0.2",
+    "module-deps": "4.0.5",
+    "JSONStream": "1.1.1",
+    "uglify-js": "2.6.2",
+    "pump": "1.0.1"
+  }
+}
