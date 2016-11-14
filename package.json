@@ -22,18 +22,23 @@
     }
   ],
   "engines": {
-    "node" : "6.x"
+    "node" : "7.x"
   },
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-js-writer/issues"
   },
-  "licenses": ["MIT"],
+  "license": "MIT",
   "dependencies": {
     "readable-stream": "2.2.1",
-    "shasum": "1.0.2",
-    "module-deps": "4.0.8",
+    "browserify": "13.1.1",
     "JSONStream": "1.2.1",
     "uglify-js": "2.7.4",
-    "pump": "1.0.1"
+    "shasum": "1.0.2"
+  },
+  "devDependencies": {
+    "tap": "8.0.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
   }
 }
