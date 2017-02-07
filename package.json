@@ -22,7 +22,7 @@
     }
   ],
   "engines": {
-    "node" : "7.x"
+    "node" : ">=4"
   },
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-js-writer/issues"
