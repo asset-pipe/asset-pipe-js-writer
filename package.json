@@ -1,6 +1,6 @@
 {
   "name": "asset-pipe-js-writer",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "author": {
     "name": "Trygve Lie",
     "email": "post@trygve-lie.com"
@@ -37,7 +37,7 @@
     "tap": "10.1.0"
   },
   "scripts": {
-    "lint": "eslint .",        
+    "lint": "eslint .",
     "test": "tap test/*.js"
   },
   "files": [
