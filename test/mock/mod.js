@@ -1,5 +1,3 @@
-"use strict";
+'use strict';
 
-module.exports = () => {
-    return 'hello from mod';
-};
+module.exports = () => 'hello from mod';
