@@ -1,3 +1,9 @@
 'use strict';
 
-module.exports = () => 'hello from mod';
+function hello() {
+    return 'hello';
+};
+
+module.exports = function () {
+    return hello();
+};
