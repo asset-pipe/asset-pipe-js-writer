@@ -113,6 +113,6 @@ THE SOFTWARE.
 [asset-pipe]: https://github.com/asset-pipe
 [browserify]: https://github.com/substack/node-browserify
 [browserify-opts]: https://github.com/substack/node-browserify#browserifyfiles--opts
-[browserify-plugin]: https://github.com/substack/node-browserify#bpipeline
+[browserify-plugin]: https://github.com/substack/node-browserify#bpluginplugin-opts
 [browserify-transform]: https://github.com/substack/node-browserify#btransformtr-opts
 [asset-pipe-js-reader]: https://github.com/asset-pipe/asset-pipe-js-reader
