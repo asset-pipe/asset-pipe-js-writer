@@ -19,10 +19,11 @@ module to build executable javascript bundles for the browser.
 
 ## Data format
 
-What we refere to as an asset feed is the internal data format used in [Browserify][browserify].
+What we refere to as an asset feed is the internal data format used in [Browserify][browserify]. We
+use the exact same data format as Browserify in the [asset-pipe project][asset-pipe].
 
-When a [CommonJS module][commonjs] entry point is provided all dependencies from that entry point
-will be read and transformed into an object which looks something like this:
+When Browserify resolves [CommonJS modules][commonjs] each dependency will be read and transformed
+into an object which looks something like this:
 
 ```json
 {
@@ -33,8 +34,7 @@ will be read and transformed into an object which looks something like this:
 }
 ```
 
-This module does stream read dependencies and emit the following object for each
-dependency. This is the asset feed.
+Each such object is emitted on a stream for each dependency. This is the asset feed.
 
 
 
@@ -48,14 +48,15 @@ $ npm install asset-pipe-js-writer
 
 ## Usage
 
-Read an entry point and pipe the feed to a JSON on `stdout`:
+Read an [CommonJS module][commonjs] entry point and pipe the feed to a JSON on disc:
 
 ```js
 const JSONStream = require('JSONStream');
 const Writer = require('asset-pipe-js-writer');
+const fs = require('fs');
 
-const writer = new Writer('./js/main.js');
-writer.bundle().pipe(JSONStream.stringify()).pipe(process.stdout);
+const writer = new Writer('./js/browser.main.js');
+writer.bundle().pipe(JSONStream.stringify()).pipe(fs.createWriteStream('./feed/browser.main.json'));
 ```
 
 
