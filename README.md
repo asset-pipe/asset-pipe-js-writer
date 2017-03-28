@@ -6,14 +6,8 @@ This module reads a [CommonJS module][commonjs] entry point for javascript files
 resolvs all the dependencies into an asset feed. It returns an [Browserify][browserify]
 instance.
 
-[Browserify][browserify] will normally parse [CommonJS modules][commonjs] into a executable
-javascript bundle for the browser. This module intercepts the internal build pipeline in
-[Browserify][browserify] just before each dependency are transformed into plain javascript
-and gives us a stream of dependency objects which can be piped to any other stream for further
-processing.
-
-Example; the output of this module can be piped into the [asset-pipe-js-reader][asset-pipe-js-reader]
-module to build executable javascript bundles for the browser.
+The output of this module can be piped into the [asset-pipe-js-reader][asset-pipe-js-reader] module
+to build executable javascript bundles for the browser.
 
 
 
@@ -56,7 +50,7 @@ const Writer = require('asset-pipe-js-writer');
 const fs = require('fs');
 
 const writer = new Writer('./js/browser.main.js');
-writer.bundle().pipe(JSONStream.stringify()).pipe(fs.createWriteStream('./feed/browser.main.json'));
+writer.bundle().pipe(JSONStream.stringify()).pipe(fs.createWriteStream('./feed/a.json'));
 ```
 
 
