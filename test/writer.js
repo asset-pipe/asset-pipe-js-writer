@@ -5,8 +5,11 @@ const tap = require('tap');
 const Writer = require('../');
 
 tap.test('foo() - bar', (t) => {
-    var writer = new Writer('./test/mock/main.js', {}, false, false);
-    writer.bundle().pipe(JSONStream.stringify()).pipe(process.stdout);
+    const writer = new Writer('./test/mock/main.js', {}, false, false);
+    writer.bundle()
+          .pipe(JSONStream.stringify())
+          .pipe(process.stdout);
+
     t.equal(true, true);
     t.end();
 });

@@ -68,6 +68,8 @@ Supported arguments are:
  * `bundle` - Boolean - If `true` this module will output a executable javascript bundle. Default: `false`.
  * `minify` - Boolean - If `true` the `source` in the asset feed will be minified. Default: `false`.
 
+Returns a `Readable stream`.
+
 ### transform()
 
 Same as the [Browserify transform][browserify-transform] method.

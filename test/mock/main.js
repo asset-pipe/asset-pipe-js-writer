@@ -1,5 +1,4 @@
 'use strict';
 
-const mod = require('./mod.js');
-console.log('hello from main');
-console.log(mod());
+require('asset-pipe-test-es5a');
+console.log('main says hello');
