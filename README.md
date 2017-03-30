@@ -3,7 +3,7 @@
 This is an internal module intended for use by other modules in the [asset-pipe project][asset-pipe].
 
 This module reads a [CommonJS module][commonjs] entry point for javascript files and
-resolvs all the dependencies into an asset feed. It returns an [Browserify][browserify]
+resolves all the dependencies into an asset feed. It returns an [Browserify][browserify]
 instance.
 
 The output of this module can be piped into the [asset-pipe-js-reader][asset-pipe-js-reader] module
