@@ -1,5 +1,7 @@
 # asset-pipe-js-writer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/asset-pipe/asset-pipe-js-writer.svg)](https://greenkeeper.io/)
+
 This is an internal module intended for use by other modules in the [asset-pipe project][asset-pipe].
 
 This module reads a [CommonJS module][commonjs] entry point for javascript files and
