@@ -29,7 +29,7 @@
     "asset-pipe-common": "1.0.0-beta.6",
     "readable-stream": "2.3.2",
     "browserify": "14.4.0",
-    "uglify-js": "3.0.20"
+    "uglify-js": "3.0.21"
   },
   "devDependencies": {
     "asset-pipe-test-es5a": "1.0.0",
