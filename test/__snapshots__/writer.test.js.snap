@@ -99,307 +99,165 @@ console.log('main says hello');
 exports[`module throws if \`files\` argument is not an array 1`] = `"Expected 'files' argument to @asset-pipe/js-writer constructor to be either a string or an array. Instead got 'object'"`;
 
 exports[`options object passes options on to browserify 1`] = `
-Array [
-  Object {
-    "deps": Object {
-      "./util.js": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
-      "asset-pipe-test-es5b": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
+"[
+  {
+    id: \\"18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar fizzbuzz = require('asset-pipe-test-es5b');\\\\nvar util = require('./util.js');\\\\n\\\\nconsole.log(util.helloWorld());\\\\nconsole.log(util.helloNumber());\\\\nfizzbuzz({s:4, e:20}, function (mgs) {\\\\n    console.log(mgs);\\\\n});\\\\n\\",
+    deps: {
+      \\"./util.js\\":
+        \\"e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609\\",
+      \\"asset-pipe-test-es5b\\":
+        \\"110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087\\"
     },
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js",
-    "id": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
-    "index": 1,
-    "indexDeps": Object {
-      "./util.js": 2,
-      "asset-pipe-test-es5b": 3,
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
+    index: 1,
+    indexDeps: {
+      \\"./util.js\\": 2,
+      \\"asset-pipe-test-es5b\\": 3
     },
-    "source": "'use strict';
-
-var fizzbuzz = require('asset-pipe-test-es5b');
-var util = require('./util.js');
-
-console.log(util.helloWorld());
-console.log(util.helloNumber());
-fizzbuzz({s:4, e:20}, function (mgs) {
-    console.log(mgs);
-});
-",
-    "sourceFile": "node_modules/asset-pipe-test-es5a/lib/main.js",
-    "sourceRoot": "file://localhost",
+    sourceRoot: \\"file://localhost\\",
+    sourceFile: \\"node_modules/asset-pipe-test-es5a/lib/main.js\\"
   },
-  Object {
-    "deps": Object {
-      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+  {
+    id: \\"e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\nfunction hello() {\\\\n    return 'Hello world!';\\\\n}\\\\n\\\\nfunction numb(num) {\\\\n    if (isPrime(num)) {\\\\n        return 'Not a prime number';\\\\n    }\\\\n    return 'A prime number';\\\\n}\\\\n\\\\nmodule.exports.helloWorld = hello;\\\\nmodule.exports.helloNumber = numb;\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5c\\":
+        \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\"
     },
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js",
-    "id": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
-    "index": 2,
-    "indexDeps": Object {
-      "asset-pipe-test-es5c": 4,
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
+    index: 2,
+    indexDeps: {
+      \\"asset-pipe-test-es5c\\": 4
     },
-    "source": "'use strict';
-
-var isPrime = require('asset-pipe-test-es5c');
-
-function hello() {
-    return 'Hello world!';
-}
-
-function numb(num) {
-    if (isPrime(num)) {
-        return 'Not a prime number';
-    }
-    return 'A prime number';
-}
-
-module.exports.helloWorld = hello;
-module.exports.helloNumber = numb;
-",
-    "sourceFile": "node_modules/asset-pipe-test-es5a/lib/util.js",
-    "sourceRoot": "file://localhost",
+    sourceRoot: \\"file://localhost\\",
+    sourceFile: \\"node_modules/asset-pipe-test-es5a/lib/util.js\\"
   },
-  Object {
-    "deps": Object {
-      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+  {
+    id: \\"110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\n/**\\\\n * Run through FizzBuzz for n integers\\\\n *\\\\n * @param {Number} config.s The number to start at\\\\n * @param {Number} config.e The number to end at\\\\n * @param {function} callback\\\\n */\\\\n\\\\nfunction fizzbuzz (config, callback) {\\\\n    for (var i = config.s; i <= config.e; i++) {\\\\n        var prime = '';\\\\n        if (config.p && isPrime(i)) {\\\\n            prime = ' Prime';\\\\n        }\\\\n\\\\n        if (!(i % 15)) {\\\\n            callback('FizzBuzz');\\\\n            continue;\\\\n        } else if (!(i % 3)) {\\\\n            callback('Fizz' + prime);\\\\n            continue;\\\\n        } else if (!(i % 5)) {\\\\n            callback('Buzz' + prime);\\\\n            continue;\\\\n        }\\\\n        callback(prime.trim() || i);\\\\n    }\\\\n};\\\\n\\\\nmodule.exports = fizzbuzz;\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5c\\":
+        \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\"
     },
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js",
-    "id": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
-    "index": 3,
-    "indexDeps": Object {
-      "asset-pipe-test-es5c": 4,
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
+    index: 3,
+    indexDeps: {
+      \\"asset-pipe-test-es5c\\": 4
     },
-    "source": "'use strict';
-
-var isPrime = require('asset-pipe-test-es5c');
-
-/**
- * Run through FizzBuzz for n integers
- *
- * @param {Number} config.s The number to start at
- * @param {Number} config.e The number to end at
- * @param {function} callback
- */
-
-function fizzbuzz (config, callback) {
-    for (var i = config.s; i <= config.e; i++) {
-        var prime = '';
-        if (config.p && isPrime(i)) {
-            prime = ' Prime';
-        }
-
-        if (!(i % 15)) {
-            callback('FizzBuzz');
-            continue;
-        } else if (!(i % 3)) {
-            callback('Fizz' + prime);
-            continue;
-        } else if (!(i % 5)) {
-            callback('Buzz' + prime);
-            continue;
-        }
-        callback(prime.trim() || i);
-    }
-};
-
-module.exports = fizzbuzz;
-",
-    "sourceFile": "node_modules/asset-pipe-test-es5b/main.js",
-    "sourceRoot": "file://localhost",
+    sourceRoot: \\"file://localhost\\",
+    sourceFile: \\"node_modules/asset-pipe-test-es5b/main.js\\"
   },
-  Object {
-    "deps": Object {},
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js",
-    "id": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
-    "index": 4,
-    "indexDeps": Object {},
-    "source": "'use strict';
-
- function prime (num) {
-    if (num < 4) {
-        return true;
-    }
-    var max = Math.ceil(Math.sqrt(num));
-    for (var i = 2; i <= max; i++) {
-        if (num % i === 0) {
-            return false;
-        }
-    }
-    return true;
-};
-
-module.exports = prime;
-",
-    "sourceFile": "node_modules/asset-pipe-test-es5c/main.js",
-    "sourceRoot": "file://localhost",
+  {
+    id: \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\",
+    source:
+      \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
+    deps: {},
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js\\",
+    index: 4,
+    indexDeps: {},
+    sourceRoot: \\"file://localhost\\",
+    sourceFile: \\"node_modules/asset-pipe-test-es5c/main.js\\"
   },
-  Object {
-    "basedir": undefined,
-    "deps": Object {
-      "asset-pipe-test-es5a": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
+  {
+    entry: true,
+    expose: false,
+    file: \\"asset-pipe-js-writer/test/mock/main.js\\",
+    id: \\"ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847\\",
+    order: 0,
+    source:
+      \\"'use strict';\\\\n\\\\nrequire('asset-pipe-test-es5a');\\\\nconsole.log('main says hello');\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5a\\":
+        \\"18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad\\"
     },
-    "entry": true,
-    "expose": false,
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/test/mock/main.js",
-    "id": "ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847",
-    "index": 5,
-    "indexDeps": Object {
-      "asset-pipe-test-es5a": 1,
+    index: 5,
+    indexDeps: {
+      \\"asset-pipe-test-es5a\\": 1
     },
-    "order": 0,
-    "source": "'use strict';
-
-require('asset-pipe-test-es5a');
-console.log('main says hello');
-",
-    "sourceFile": "test/mock/main.js",
-    "sourceRoot": "file://localhost",
-  },
-]
+    sourceRoot: \\"file://localhost\\",
+    sourceFile: \\"test/mock/main.js\\"
+  }
+];
+"
 `;
 
 exports[`writer produces a feed of dependencies with ids hashed 1`] = `
-Array [
-  Object {
-    "deps": Object {
-      "./util.js": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
-      "asset-pipe-test-es5b": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
+"[
+  {
+    id: \\"18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar fizzbuzz = require('asset-pipe-test-es5b');\\\\nvar util = require('./util.js');\\\\n\\\\nconsole.log(util.helloWorld());\\\\nconsole.log(util.helloNumber());\\\\nfizzbuzz({s:4, e:20}, function (mgs) {\\\\n    console.log(mgs);\\\\n});\\\\n\\",
+    deps: {
+      \\"./util.js\\":
+        \\"e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609\\",
+      \\"asset-pipe-test-es5b\\":
+        \\"110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087\\"
     },
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js",
-    "id": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
-    "index": 1,
-    "indexDeps": Object {
-      "./util.js": 2,
-      "asset-pipe-test-es5b": 3,
-    },
-    "source": "'use strict';
-
-var fizzbuzz = require('asset-pipe-test-es5b');
-var util = require('./util.js');
-
-console.log(util.helloWorld());
-console.log(util.helloNumber());
-fizzbuzz({s:4, e:20}, function (mgs) {
-    console.log(mgs);
-});
-",
-  },
-  Object {
-    "deps": Object {
-      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
-    },
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js",
-    "id": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
-    "index": 2,
-    "indexDeps": Object {
-      "asset-pipe-test-es5c": 4,
-    },
-    "source": "'use strict';
-
-var isPrime = require('asset-pipe-test-es5c');
-
-function hello() {
-    return 'Hello world!';
-}
-
-function numb(num) {
-    if (isPrime(num)) {
-        return 'Not a prime number';
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
+    index: 1,
+    indexDeps: {
+      \\"./util.js\\": 2,
+      \\"asset-pipe-test-es5b\\": 3
     }
-    return 'A prime number';
-}
-
-module.exports.helloWorld = hello;
-module.exports.helloNumber = numb;
-",
   },
-  Object {
-    "deps": Object {
-      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+  {
+    id: \\"e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\nfunction hello() {\\\\n    return 'Hello world!';\\\\n}\\\\n\\\\nfunction numb(num) {\\\\n    if (isPrime(num)) {\\\\n        return 'Not a prime number';\\\\n    }\\\\n    return 'A prime number';\\\\n}\\\\n\\\\nmodule.exports.helloWorld = hello;\\\\nmodule.exports.helloNumber = numb;\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5c\\":
+        \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\"
     },
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js",
-    "id": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
-    "index": 3,
-    "indexDeps": Object {
-      "asset-pipe-test-es5c": 4,
-    },
-    "source": "'use strict';
-
-var isPrime = require('asset-pipe-test-es5c');
-
-/**
- * Run through FizzBuzz for n integers
- *
- * @param {Number} config.s The number to start at
- * @param {Number} config.e The number to end at
- * @param {function} callback
- */
-
-function fizzbuzz (config, callback) {
-    for (var i = config.s; i <= config.e; i++) {
-        var prime = '';
-        if (config.p && isPrime(i)) {
-            prime = ' Prime';
-        }
-
-        if (!(i % 15)) {
-            callback('FizzBuzz');
-            continue;
-        } else if (!(i % 3)) {
-            callback('Fizz' + prime);
-            continue;
-        } else if (!(i % 5)) {
-            callback('Buzz' + prime);
-            continue;
-        }
-        callback(prime.trim() || i);
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
+    index: 2,
+    indexDeps: {
+      \\"asset-pipe-test-es5c\\": 4
     }
-};
-
-module.exports = fizzbuzz;
-",
   },
-  Object {
-    "deps": Object {},
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js",
-    "id": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
-    "index": 4,
-    "indexDeps": Object {},
-    "source": "'use strict';
-
- function prime (num) {
-    if (num < 4) {
-        return true;
-    }
-    var max = Math.ceil(Math.sqrt(num));
-    for (var i = 2; i <= max; i++) {
-        if (num % i === 0) {
-            return false;
-        }
-    }
-    return true;
-};
-
-module.exports = prime;
-",
-  },
-  Object {
-    "basedir": undefined,
-    "deps": Object {
-      "asset-pipe-test-es5a": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
+  {
+    id: \\"110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\n/**\\\\n * Run through FizzBuzz for n integers\\\\n *\\\\n * @param {Number} config.s The number to start at\\\\n * @param {Number} config.e The number to end at\\\\n * @param {function} callback\\\\n */\\\\n\\\\nfunction fizzbuzz (config, callback) {\\\\n    for (var i = config.s; i <= config.e; i++) {\\\\n        var prime = '';\\\\n        if (config.p && isPrime(i)) {\\\\n            prime = ' Prime';\\\\n        }\\\\n\\\\n        if (!(i % 15)) {\\\\n            callback('FizzBuzz');\\\\n            continue;\\\\n        } else if (!(i % 3)) {\\\\n            callback('Fizz' + prime);\\\\n            continue;\\\\n        } else if (!(i % 5)) {\\\\n            callback('Buzz' + prime);\\\\n            continue;\\\\n        }\\\\n        callback(prime.trim() || i);\\\\n    }\\\\n};\\\\n\\\\nmodule.exports = fizzbuzz;\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5c\\":
+        \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\"
     },
-    "entry": true,
-    "expose": false,
-    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/test/mock/main.js",
-    "id": "ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847",
-    "index": 5,
-    "indexDeps": Object {
-      "asset-pipe-test-es5a": 1,
-    },
-    "order": 0,
-    "source": "'use strict';
-
-require('asset-pipe-test-es5a');
-console.log('main says hello');
-",
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
+    index: 3,
+    indexDeps: {
+      \\"asset-pipe-test-es5c\\": 4
+    }
   },
-]
+  {
+    id: \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\",
+    source:
+      \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
+    deps: {},
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js\\",
+    index: 4,
+    indexDeps: {}
+  },
+  {
+    entry: true,
+    expose: false,
+    file: \\"asset-pipe-js-writer/test/mock/main.js\\",
+    id: \\"ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847\\",
+    order: 0,
+    source:
+      \\"'use strict';\\\\n\\\\nrequire('asset-pipe-test-es5a');\\\\nconsole.log('main says hello');\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5a\\":
+        \\"18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad\\"
+    },
+    index: 5,
+    indexDeps: {
+      \\"asset-pipe-test-es5a\\": 1
+    }
+  }
+];
+"
 `;
