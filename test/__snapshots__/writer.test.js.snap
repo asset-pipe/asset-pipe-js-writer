@@ -1,0 +1,405 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bundle option allows getting a bundle instead of a feed 1`] = `
+"(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require==\\"function\\"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error(\\"Cannot find module '\\"+o+\\"'\\");throw f.code=\\"MODULE_NOT_FOUND\\",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require==\\"function\\"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+var fizzbuzz = require('asset-pipe-test-es5b');
+var util = require('./util.js');
+
+console.log(util.helloWorld());
+console.log(util.helloNumber());
+fizzbuzz({s:4, e:20}, function (mgs) {
+    console.log(mgs);
+});
+
+},{\\"./util.js\\":2,\\"asset-pipe-test-es5b\\":3}],2:[function(require,module,exports){
+'use strict';
+
+var isPrime = require('asset-pipe-test-es5c');
+
+function hello() {
+    return 'Hello world!';
+}
+
+function numb(num) {
+    if (isPrime(num)) {
+        return 'Not a prime number';
+    }
+    return 'A prime number';
+}
+
+module.exports.helloWorld = hello;
+module.exports.helloNumber = numb;
+
+},{\\"asset-pipe-test-es5c\\":4}],3:[function(require,module,exports){
+'use strict';
+
+var isPrime = require('asset-pipe-test-es5c');
+
+/**
+ * Run through FizzBuzz for n integers
+ *
+ * @param {Number} config.s The number to start at
+ * @param {Number} config.e The number to end at
+ * @param {function} callback
+ */
+
+function fizzbuzz (config, callback) {
+    for (var i = config.s; i <= config.e; i++) {
+        var prime = '';
+        if (config.p && isPrime(i)) {
+            prime = ' Prime';
+        }
+
+        if (!(i % 15)) {
+            callback('FizzBuzz');
+            continue;
+        } else if (!(i % 3)) {
+            callback('Fizz' + prime);
+            continue;
+        } else if (!(i % 5)) {
+            callback('Buzz' + prime);
+            continue;
+        }
+        callback(prime.trim() || i);
+    }
+};
+
+module.exports = fizzbuzz;
+
+},{\\"asset-pipe-test-es5c\\":4}],4:[function(require,module,exports){
+'use strict';
+
+ function prime (num) {
+    if (num < 4) {
+        return true;
+    }
+    var max = Math.ceil(Math.sqrt(num));
+    for (var i = 2; i <= max; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+};
+
+module.exports = prime;
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+require('asset-pipe-test-es5a');
+console.log('main says hello');
+
+},{\\"asset-pipe-test-es5a\\":1}]},{},[5]);
+"
+`;
+
+exports[`module throws if \`files\` argument is not an array 1`] = `"Expected 'files' argument to @asset-pipe/js-writer constructor to be either a string or an array. Instead got 'object'"`;
+
+exports[`options object passes options on to browserify 1`] = `
+Array [
+  Object {
+    "deps": Object {
+      "./util.js": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
+      "asset-pipe-test-es5b": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
+    },
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js",
+    "id": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
+    "index": 1,
+    "indexDeps": Object {
+      "./util.js": 2,
+      "asset-pipe-test-es5b": 3,
+    },
+    "source": "'use strict';
+
+var fizzbuzz = require('asset-pipe-test-es5b');
+var util = require('./util.js');
+
+console.log(util.helloWorld());
+console.log(util.helloNumber());
+fizzbuzz({s:4, e:20}, function (mgs) {
+    console.log(mgs);
+});
+",
+    "sourceFile": "node_modules/asset-pipe-test-es5a/lib/main.js",
+    "sourceRoot": "file://localhost",
+  },
+  Object {
+    "deps": Object {
+      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+    },
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js",
+    "id": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
+    "index": 2,
+    "indexDeps": Object {
+      "asset-pipe-test-es5c": 4,
+    },
+    "source": "'use strict';
+
+var isPrime = require('asset-pipe-test-es5c');
+
+function hello() {
+    return 'Hello world!';
+}
+
+function numb(num) {
+    if (isPrime(num)) {
+        return 'Not a prime number';
+    }
+    return 'A prime number';
+}
+
+module.exports.helloWorld = hello;
+module.exports.helloNumber = numb;
+",
+    "sourceFile": "node_modules/asset-pipe-test-es5a/lib/util.js",
+    "sourceRoot": "file://localhost",
+  },
+  Object {
+    "deps": Object {
+      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+    },
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js",
+    "id": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
+    "index": 3,
+    "indexDeps": Object {
+      "asset-pipe-test-es5c": 4,
+    },
+    "source": "'use strict';
+
+var isPrime = require('asset-pipe-test-es5c');
+
+/**
+ * Run through FizzBuzz for n integers
+ *
+ * @param {Number} config.s The number to start at
+ * @param {Number} config.e The number to end at
+ * @param {function} callback
+ */
+
+function fizzbuzz (config, callback) {
+    for (var i = config.s; i <= config.e; i++) {
+        var prime = '';
+        if (config.p && isPrime(i)) {
+            prime = ' Prime';
+        }
+
+        if (!(i % 15)) {
+            callback('FizzBuzz');
+            continue;
+        } else if (!(i % 3)) {
+            callback('Fizz' + prime);
+            continue;
+        } else if (!(i % 5)) {
+            callback('Buzz' + prime);
+            continue;
+        }
+        callback(prime.trim() || i);
+    }
+};
+
+module.exports = fizzbuzz;
+",
+    "sourceFile": "node_modules/asset-pipe-test-es5b/main.js",
+    "sourceRoot": "file://localhost",
+  },
+  Object {
+    "deps": Object {},
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js",
+    "id": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+    "index": 4,
+    "indexDeps": Object {},
+    "source": "'use strict';
+
+ function prime (num) {
+    if (num < 4) {
+        return true;
+    }
+    var max = Math.ceil(Math.sqrt(num));
+    for (var i = 2; i <= max; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+};
+
+module.exports = prime;
+",
+    "sourceFile": "node_modules/asset-pipe-test-es5c/main.js",
+    "sourceRoot": "file://localhost",
+  },
+  Object {
+    "basedir": undefined,
+    "deps": Object {
+      "asset-pipe-test-es5a": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
+    },
+    "entry": true,
+    "expose": false,
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/test/mock/main.js",
+    "id": "ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847",
+    "index": 5,
+    "indexDeps": Object {
+      "asset-pipe-test-es5a": 1,
+    },
+    "order": 0,
+    "source": "'use strict';
+
+require('asset-pipe-test-es5a');
+console.log('main says hello');
+",
+    "sourceFile": "test/mock/main.js",
+    "sourceRoot": "file://localhost",
+  },
+]
+`;
+
+exports[`writer produces a feed of dependencies with ids hashed 1`] = `
+Array [
+  Object {
+    "deps": Object {
+      "./util.js": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
+      "asset-pipe-test-es5b": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
+    },
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js",
+    "id": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
+    "index": 1,
+    "indexDeps": Object {
+      "./util.js": 2,
+      "asset-pipe-test-es5b": 3,
+    },
+    "source": "'use strict';
+
+var fizzbuzz = require('asset-pipe-test-es5b');
+var util = require('./util.js');
+
+console.log(util.helloWorld());
+console.log(util.helloNumber());
+fizzbuzz({s:4, e:20}, function (mgs) {
+    console.log(mgs);
+});
+",
+  },
+  Object {
+    "deps": Object {
+      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+    },
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js",
+    "id": "e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609",
+    "index": 2,
+    "indexDeps": Object {
+      "asset-pipe-test-es5c": 4,
+    },
+    "source": "'use strict';
+
+var isPrime = require('asset-pipe-test-es5c');
+
+function hello() {
+    return 'Hello world!';
+}
+
+function numb(num) {
+    if (isPrime(num)) {
+        return 'Not a prime number';
+    }
+    return 'A prime number';
+}
+
+module.exports.helloWorld = hello;
+module.exports.helloNumber = numb;
+",
+  },
+  Object {
+    "deps": Object {
+      "asset-pipe-test-es5c": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+    },
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js",
+    "id": "110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087",
+    "index": 3,
+    "indexDeps": Object {
+      "asset-pipe-test-es5c": 4,
+    },
+    "source": "'use strict';
+
+var isPrime = require('asset-pipe-test-es5c');
+
+/**
+ * Run through FizzBuzz for n integers
+ *
+ * @param {Number} config.s The number to start at
+ * @param {Number} config.e The number to end at
+ * @param {function} callback
+ */
+
+function fizzbuzz (config, callback) {
+    for (var i = config.s; i <= config.e; i++) {
+        var prime = '';
+        if (config.p && isPrime(i)) {
+            prime = ' Prime';
+        }
+
+        if (!(i % 15)) {
+            callback('FizzBuzz');
+            continue;
+        } else if (!(i % 3)) {
+            callback('Fizz' + prime);
+            continue;
+        } else if (!(i % 5)) {
+            callback('Buzz' + prime);
+            continue;
+        }
+        callback(prime.trim() || i);
+    }
+};
+
+module.exports = fizzbuzz;
+",
+  },
+  Object {
+    "deps": Object {},
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js",
+    "id": "155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b",
+    "index": 4,
+    "indexDeps": Object {},
+    "source": "'use strict';
+
+ function prime (num) {
+    if (num < 4) {
+        return true;
+    }
+    var max = Math.ceil(Math.sqrt(num));
+    for (var i = 2; i <= max; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+};
+
+module.exports = prime;
+",
+  },
+  Object {
+    "basedir": undefined,
+    "deps": Object {
+      "asset-pipe-test-es5a": "18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad",
+    },
+    "entry": true,
+    "expose": false,
+    "file": "/Users/ricwalke/src/asset-pipe/asset-pipe-js-writer/test/mock/main.js",
+    "id": "ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847",
+    "index": 5,
+    "indexDeps": Object {
+      "asset-pipe-test-es5a": 1,
+    },
+    "order": 0,
+    "source": "'use strict';
+
+require('asset-pipe-test-es5a');
+console.log('main says hello');
+",
+  },
+]
+`;

@@ -1,14 +1,36 @@
 'use strict';
 
-const JSONStream = require('JSONStream');
+const getStream = require('./helpers/get-stream');
 const Writer = require('../');
 
-test('foo() - bar', () => {
-    const writer = new Writer('./test/mock/main.js', {}, false, false);
-    writer
-        .bundle()
-        .pipe(JSONStream.stringify())
-        .pipe(process.stdout);
+test('writer produces a feed of dependencies with ids hashed', async () => {
+    expect.hasAssertions();
+    const writer = new Writer('./test/mock/main.js');
+    const result = await getStream(writer.bundle());
 
-    expect(true).toBe(true);
+    expect(result).toMatchSnapshot();
+});
+
+test('options object passes options on to browserify', async () => {
+    expect.hasAssertions();
+    const writer = new Writer(['./test/mock/main.js'], {
+        debug: true,
+    });
+    const result = await getStream(writer.bundle());
+
+    expect(result).toMatchSnapshot();
+});
+
+test('bundle option allows getting a bundle instead of a feed', async () => {
+    expect.hasAssertions();
+    const writer = new Writer('./test/mock/main.js', {}, true);
+    const result = await getStream(writer.bundle());
+
+    expect(result).toMatchSnapshot();
+});
+
+test('module throws if `files` argument is not an array', async () => {
+    expect.hasAssertions();
+    const run = () => new Writer(null, {}, true);
+    expect(run).toThrowErrorMatchingSnapshot();
 });
