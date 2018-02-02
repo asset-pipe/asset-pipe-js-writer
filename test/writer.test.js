@@ -43,3 +43,11 @@ test('module throws if `files` argument is not an array', async () => {
     const run = () => new Writer(null, {}, true);
     expect(run).toThrowErrorMatchingSnapshot();
 });
+
+test('feed is not deduped', async () => {
+    expect.hasAssertions();
+    const writer = new Writer('./test/mock/no-dedupe.js', {});
+    const result = await getStream(writer.bundle());
+
+    expect(clean(result)).toMatchSnapshot();
+});

@@ -96,6 +96,112 @@ console.log('main says hello');
 "
 `;
 
+exports[`feed is not deduped 1`] = `
+"[
+  {
+    id: \\"18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar fizzbuzz = require('asset-pipe-test-es5b');\\\\nvar util = require('./util.js');\\\\n\\\\nconsole.log(util.helloWorld());\\\\nconsole.log(util.helloNumber());\\\\nfizzbuzz({s:4, e:20}, function (mgs) {\\\\n    console.log(mgs);\\\\n});\\\\n\\",
+    deps: {
+      \\"./util.js\\":
+        \\"e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609\\",
+      \\"asset-pipe-test-es5b\\":
+        \\"110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087\\"
+    },
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
+    index: 1,
+    indexDeps: {
+      \\"./util.js\\": 2,
+      \\"asset-pipe-test-es5b\\": 3
+    }
+  },
+  {
+    id: \\"e2d2292212a0dcea8006331903fe562b9ac3eb46148bdfd3836273fd9a7db609\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\nfunction hello() {\\\\n    return 'Hello world!';\\\\n}\\\\n\\\\nfunction numb(num) {\\\\n    if (isPrime(num)) {\\\\n        return 'Not a prime number';\\\\n    }\\\\n    return 'A prime number';\\\\n}\\\\n\\\\nmodule.exports.helloWorld = hello;\\\\nmodule.exports.helloNumber = numb;\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5c\\":
+        \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\"
+    },
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
+    index: 2,
+    indexDeps: {
+      \\"asset-pipe-test-es5c\\": 4
+    }
+  },
+  {
+    id: \\"110e7030dde4afcbbc598c046f76700ab7eb851a52709f3086b2d60c31330087\\",
+    source:
+      \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\n/**\\\\n * Run through FizzBuzz for n integers\\\\n *\\\\n * @param {Number} config.s The number to start at\\\\n * @param {Number} config.e The number to end at\\\\n * @param {function} callback\\\\n */\\\\n\\\\nfunction fizzbuzz (config, callback) {\\\\n    for (var i = config.s; i <= config.e; i++) {\\\\n        var prime = '';\\\\n        if (config.p && isPrime(i)) {\\\\n            prime = ' Prime';\\\\n        }\\\\n\\\\n        if (!(i % 15)) {\\\\n            callback('FizzBuzz');\\\\n            continue;\\\\n        } else if (!(i % 3)) {\\\\n            callback('Fizz' + prime);\\\\n            continue;\\\\n        } else if (!(i % 5)) {\\\\n            callback('Buzz' + prime);\\\\n            continue;\\\\n        }\\\\n        callback(prime.trim() || i);\\\\n    }\\\\n};\\\\n\\\\nmodule.exports = fizzbuzz;\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5c\\":
+        \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\"
+    },
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
+    index: 3,
+    indexDeps: {
+      \\"asset-pipe-test-es5c\\": 4
+    }
+  },
+  {
+    id: \\"155c2235c68a81d7df2f9bfb79149d679bf187c69e815d8c5c4fa3d5def2ad3b\\",
+    source:
+      \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
+    deps: {},
+    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js\\",
+    index: 4,
+    indexDeps: {}
+  },
+  {
+    id: \\"a5c59156f7c7ba1eba4054b26464dc523cfd5611ea4bf528e15f3cf0fc11e84a\\",
+    source: \\"'use strict';\\\\n\\\\nrequire('./main');\\\\n\\",
+    deps: {
+      \\"./main\\":
+        \\"ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847\\"
+    },
+    file: \\"asset-pipe-js-writer/test/mock/common.js\\",
+    index: 5,
+    indexDeps: {
+      \\"./main\\": 6
+    }
+  },
+  {
+    id: \\"ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847\\",
+    source:
+      \\"'use strict';\\\\n\\\\nrequire('asset-pipe-test-es5a');\\\\nconsole.log('main says hello');\\\\n\\",
+    deps: {
+      \\"asset-pipe-test-es5a\\":
+        \\"18b899957f7b0dfbb0e7ab22606904ffea55126f338efca91203c4df2f8d76ad\\"
+    },
+    file: \\"asset-pipe-js-writer/test/mock/main.js\\",
+    index: 6,
+    indexDeps: {
+      \\"asset-pipe-test-es5a\\": 1
+    }
+  },
+  {
+    entry: true,
+    expose: false,
+    file: \\"asset-pipe-js-writer/test/mock/no-dedupe.js\\",
+    id: \\"12505fde83a0c1875bb4a9723a9c113de5d5085a426a34af956406d1f97977e7\\",
+    order: 0,
+    source: \\"'use strict';\\\\n\\\\nrequire('./common');\\\\nrequire('./main');\\\\n\\",
+    deps: {
+      \\"./common\\":
+        \\"a5c59156f7c7ba1eba4054b26464dc523cfd5611ea4bf528e15f3cf0fc11e84a\\",
+      \\"./main\\":
+        \\"ba83602a6ebf462378a3dd0ad7ad8c8ef9b45d6968362609d44c75b9e48f2847\\"
+    },
+    index: 7,
+    indexDeps: {
+      \\"./common\\": 5,
+      \\"./main\\": 6
+    }
+  }
+];
+"
+`;
+
 exports[`module throws if \`files\` argument is not an array 1`] = `"Expected 'files' argument to @asset-pipe/js-writer constructor to be either a string or an array. Instead got 'object'"`;
 
 exports[`options object passes options on to browserify 1`] = `
