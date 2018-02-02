@@ -44,7 +44,8 @@
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2",
     "react": "^16.2.0",
-    "tap": "^11.0.1"
+    "tap": "^11.0.1",
+    "semantic-release": "^12.4.1"
   },
   "scripts": {
     "lint": "eslint .",
@@ -52,7 +53,8 @@
     "lint:format": "eslint --fix .",
     "lint:commit": "commitlint --from=HEAD~1",
     "precommit": "lint-staged",
-    "cm": "git-cz"
+    "cm": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "files": ["lib"],
   "jest": {
