@@ -99,14 +99,14 @@ console.log('main says hello');
 exports[`feed is not deduped 1`] = `
 "[
   {
-    id: \\"da34d0ca36dc47074b9f140adea29001e5dd86f6457e27f91134f1f7de8eb094\\",
+    id: \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\",
     source:
       \\"'use strict';\\\\n\\\\nvar fizzbuzz = require('asset-pipe-test-es5b');\\\\nvar util = require('./util.js');\\\\n\\\\nconsole.log(util.helloWorld());\\\\nconsole.log(util.helloNumber());\\\\nfizzbuzz({s:4, e:20}, function (mgs) {\\\\n    console.log(mgs);\\\\n});\\\\n\\",
     deps: {
       \\"./util.js\\":
-        \\"69cb155d3e533cc9c8c419cc89f27ca6c0a34fdefa889754a06e8ec68541ac04\\",
+        \\"d286af219ef4acea1b486c460bdc65443fba40bd913457ce3e256ccc221f2d07\\",
       \\"asset-pipe-test-es5b\\":
-        \\"427feef8cc6bd1678b92f1049b2df0d23a024b968fda0796fada3e67e6f9f35b\\"
+        \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
     index: 1,
@@ -116,12 +116,12 @@ exports[`feed is not deduped 1`] = `
     }
   },
   {
-    id: \\"69cb155d3e533cc9c8c419cc89f27ca6c0a34fdefa889754a06e8ec68541ac04\\",
+    id: \\"d286af219ef4acea1b486c460bdc65443fba40bd913457ce3e256ccc221f2d07\\",
     source:
       \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\nfunction hello() {\\\\n    return 'Hello world!';\\\\n}\\\\n\\\\nfunction numb(num) {\\\\n    if (isPrime(num)) {\\\\n        return 'Not a prime number';\\\\n    }\\\\n    return 'A prime number';\\\\n}\\\\n\\\\nmodule.exports.helloWorld = hello;\\\\nmodule.exports.helloNumber = numb;\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5c\\":
-        \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\"
+        \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
     index: 2,
@@ -130,12 +130,12 @@ exports[`feed is not deduped 1`] = `
     }
   },
   {
-    id: \\"427feef8cc6bd1678b92f1049b2df0d23a024b968fda0796fada3e67e6f9f35b\\",
+    id: \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\",
     source:
       \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\n/**\\\\n * Run through FizzBuzz for n integers\\\\n *\\\\n * @param {Number} config.s The number to start at\\\\n * @param {Number} config.e The number to end at\\\\n * @param {function} callback\\\\n */\\\\n\\\\nfunction fizzbuzz (config, callback) {\\\\n    for (var i = config.s; i <= config.e; i++) {\\\\n        var prime = '';\\\\n        if (config.p && isPrime(i)) {\\\\n            prime = ' Prime';\\\\n        }\\\\n\\\\n        if (!(i % 15)) {\\\\n            callback('FizzBuzz');\\\\n            continue;\\\\n        } else if (!(i % 3)) {\\\\n            callback('Fizz' + prime);\\\\n            continue;\\\\n        } else if (!(i % 5)) {\\\\n            callback('Buzz' + prime);\\\\n            continue;\\\\n        }\\\\n        callback(prime.trim() || i);\\\\n    }\\\\n};\\\\n\\\\nmodule.exports = fizzbuzz;\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5c\\":
-        \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\"
+        \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
     index: 3,
@@ -144,7 +144,7 @@ exports[`feed is not deduped 1`] = `
     }
   },
   {
-    id: \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\",
+    id: \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\",
     source:
       \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
     deps: {},
@@ -153,11 +153,11 @@ exports[`feed is not deduped 1`] = `
     indexDeps: {}
   },
   {
-    id: \\"29307fdb685c1420aa7b3b357eacdaed2a4c953b71bbd776dfb398f451ad7f05\\",
+    id: \\"17cec02a29ba2621285a0c6928e7b6f91f9e10cbaa45be1eddbf4faed55c8b3d\\",
     source: \\"'use strict';\\\\n\\\\nrequire('./main');\\\\n\\",
     deps: {
       \\"./main\\":
-        \\"eae04b1ae2a4f9822b36015cb458186dcec69821e785f796f243d2ad994dd768\\"
+        \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\"
     },
     file: \\"asset-pipe-js-writer/test/mock/common.js\\",
     index: 5,
@@ -166,12 +166,12 @@ exports[`feed is not deduped 1`] = `
     }
   },
   {
-    id: \\"eae04b1ae2a4f9822b36015cb458186dcec69821e785f796f243d2ad994dd768\\",
+    id: \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\",
     source:
       \\"'use strict';\\\\n\\\\nrequire('asset-pipe-test-es5a');\\\\nconsole.log('main says hello');\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5a\\":
-        \\"da34d0ca36dc47074b9f140adea29001e5dd86f6457e27f91134f1f7de8eb094\\"
+        \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\"
     },
     file: \\"asset-pipe-js-writer/test/mock/main.js\\",
     index: 6,
@@ -183,14 +183,14 @@ exports[`feed is not deduped 1`] = `
     entry: true,
     expose: false,
     file: \\"asset-pipe-js-writer/test/mock/no-dedupe.js\\",
-    id: \\"589440eec97668c3f811548b2be4d9883b568ce4d9ab5dc36da523bbd13a9c67\\",
+    id: \\"c98cd71bd49ced468ea7011b8733d1a4f940f28f9336797fe7c24687d2d82dc6\\",
     order: 0,
     source: \\"'use strict';\\\\n\\\\nrequire('./common');\\\\nrequire('./main');\\\\n\\",
     deps: {
       \\"./common\\":
-        \\"29307fdb685c1420aa7b3b357eacdaed2a4c953b71bbd776dfb398f451ad7f05\\",
+        \\"17cec02a29ba2621285a0c6928e7b6f91f9e10cbaa45be1eddbf4faed55c8b3d\\",
       \\"./main\\":
-        \\"eae04b1ae2a4f9822b36015cb458186dcec69821e785f796f243d2ad994dd768\\"
+        \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\"
     },
     index: 7,
     indexDeps: {
@@ -207,14 +207,14 @@ exports[`module throws if \`files\` argument is not an array 1`] = `"Expected 'f
 exports[`options object passes options on to browserify 1`] = `
 "[
   {
-    id: \\"da34d0ca36dc47074b9f140adea29001e5dd86f6457e27f91134f1f7de8eb094\\",
+    id: \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\",
     source:
       \\"'use strict';\\\\n\\\\nvar fizzbuzz = require('asset-pipe-test-es5b');\\\\nvar util = require('./util.js');\\\\n\\\\nconsole.log(util.helloWorld());\\\\nconsole.log(util.helloNumber());\\\\nfizzbuzz({s:4, e:20}, function (mgs) {\\\\n    console.log(mgs);\\\\n});\\\\n\\",
     deps: {
       \\"./util.js\\":
-        \\"69cb155d3e533cc9c8c419cc89f27ca6c0a34fdefa889754a06e8ec68541ac04\\",
+        \\"d286af219ef4acea1b486c460bdc65443fba40bd913457ce3e256ccc221f2d07\\",
       \\"asset-pipe-test-es5b\\":
-        \\"427feef8cc6bd1678b92f1049b2df0d23a024b968fda0796fada3e67e6f9f35b\\"
+        \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
     index: 1,
@@ -226,12 +226,12 @@ exports[`options object passes options on to browserify 1`] = `
     sourceFile: \\"node_modules/asset-pipe-test-es5a/lib/main.js\\"
   },
   {
-    id: \\"69cb155d3e533cc9c8c419cc89f27ca6c0a34fdefa889754a06e8ec68541ac04\\",
+    id: \\"d286af219ef4acea1b486c460bdc65443fba40bd913457ce3e256ccc221f2d07\\",
     source:
       \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\nfunction hello() {\\\\n    return 'Hello world!';\\\\n}\\\\n\\\\nfunction numb(num) {\\\\n    if (isPrime(num)) {\\\\n        return 'Not a prime number';\\\\n    }\\\\n    return 'A prime number';\\\\n}\\\\n\\\\nmodule.exports.helloWorld = hello;\\\\nmodule.exports.helloNumber = numb;\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5c\\":
-        \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\"
+        \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
     index: 2,
@@ -242,12 +242,12 @@ exports[`options object passes options on to browserify 1`] = `
     sourceFile: \\"node_modules/asset-pipe-test-es5a/lib/util.js\\"
   },
   {
-    id: \\"427feef8cc6bd1678b92f1049b2df0d23a024b968fda0796fada3e67e6f9f35b\\",
+    id: \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\",
     source:
       \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\n/**\\\\n * Run through FizzBuzz for n integers\\\\n *\\\\n * @param {Number} config.s The number to start at\\\\n * @param {Number} config.e The number to end at\\\\n * @param {function} callback\\\\n */\\\\n\\\\nfunction fizzbuzz (config, callback) {\\\\n    for (var i = config.s; i <= config.e; i++) {\\\\n        var prime = '';\\\\n        if (config.p && isPrime(i)) {\\\\n            prime = ' Prime';\\\\n        }\\\\n\\\\n        if (!(i % 15)) {\\\\n            callback('FizzBuzz');\\\\n            continue;\\\\n        } else if (!(i % 3)) {\\\\n            callback('Fizz' + prime);\\\\n            continue;\\\\n        } else if (!(i % 5)) {\\\\n            callback('Buzz' + prime);\\\\n            continue;\\\\n        }\\\\n        callback(prime.trim() || i);\\\\n    }\\\\n};\\\\n\\\\nmodule.exports = fizzbuzz;\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5c\\":
-        \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\"
+        \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
     index: 3,
@@ -258,7 +258,7 @@ exports[`options object passes options on to browserify 1`] = `
     sourceFile: \\"node_modules/asset-pipe-test-es5b/main.js\\"
   },
   {
-    id: \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\",
+    id: \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\",
     source:
       \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
     deps: {},
@@ -272,13 +272,13 @@ exports[`options object passes options on to browserify 1`] = `
     entry: true,
     expose: false,
     file: \\"asset-pipe-js-writer/test/mock/main.js\\",
-    id: \\"eae04b1ae2a4f9822b36015cb458186dcec69821e785f796f243d2ad994dd768\\",
+    id: \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\",
     order: 0,
     source:
       \\"'use strict';\\\\n\\\\nrequire('asset-pipe-test-es5a');\\\\nconsole.log('main says hello');\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5a\\":
-        \\"da34d0ca36dc47074b9f140adea29001e5dd86f6457e27f91134f1f7de8eb094\\"
+        \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\"
     },
     index: 5,
     indexDeps: {
@@ -294,14 +294,14 @@ exports[`options object passes options on to browserify 1`] = `
 exports[`writer produces a feed of dependencies with ids hashed 1`] = `
 "[
   {
-    id: \\"da34d0ca36dc47074b9f140adea29001e5dd86f6457e27f91134f1f7de8eb094\\",
+    id: \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\",
     source:
       \\"'use strict';\\\\n\\\\nvar fizzbuzz = require('asset-pipe-test-es5b');\\\\nvar util = require('./util.js');\\\\n\\\\nconsole.log(util.helloWorld());\\\\nconsole.log(util.helloNumber());\\\\nfizzbuzz({s:4, e:20}, function (mgs) {\\\\n    console.log(mgs);\\\\n});\\\\n\\",
     deps: {
       \\"./util.js\\":
-        \\"69cb155d3e533cc9c8c419cc89f27ca6c0a34fdefa889754a06e8ec68541ac04\\",
+        \\"d286af219ef4acea1b486c460bdc65443fba40bd913457ce3e256ccc221f2d07\\",
       \\"asset-pipe-test-es5b\\":
-        \\"427feef8cc6bd1678b92f1049b2df0d23a024b968fda0796fada3e67e6f9f35b\\"
+        \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
     index: 1,
@@ -311,12 +311,12 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
     }
   },
   {
-    id: \\"69cb155d3e533cc9c8c419cc89f27ca6c0a34fdefa889754a06e8ec68541ac04\\",
+    id: \\"d286af219ef4acea1b486c460bdc65443fba40bd913457ce3e256ccc221f2d07\\",
     source:
       \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\nfunction hello() {\\\\n    return 'Hello world!';\\\\n}\\\\n\\\\nfunction numb(num) {\\\\n    if (isPrime(num)) {\\\\n        return 'Not a prime number';\\\\n    }\\\\n    return 'A prime number';\\\\n}\\\\n\\\\nmodule.exports.helloWorld = hello;\\\\nmodule.exports.helloNumber = numb;\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5c\\":
-        \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\"
+        \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
     index: 2,
@@ -325,12 +325,12 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
     }
   },
   {
-    id: \\"427feef8cc6bd1678b92f1049b2df0d23a024b968fda0796fada3e67e6f9f35b\\",
+    id: \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\",
     source:
       \\"'use strict';\\\\n\\\\nvar isPrime = require('asset-pipe-test-es5c');\\\\n\\\\n/**\\\\n * Run through FizzBuzz for n integers\\\\n *\\\\n * @param {Number} config.s The number to start at\\\\n * @param {Number} config.e The number to end at\\\\n * @param {function} callback\\\\n */\\\\n\\\\nfunction fizzbuzz (config, callback) {\\\\n    for (var i = config.s; i <= config.e; i++) {\\\\n        var prime = '';\\\\n        if (config.p && isPrime(i)) {\\\\n            prime = ' Prime';\\\\n        }\\\\n\\\\n        if (!(i % 15)) {\\\\n            callback('FizzBuzz');\\\\n            continue;\\\\n        } else if (!(i % 3)) {\\\\n            callback('Fizz' + prime);\\\\n            continue;\\\\n        } else if (!(i % 5)) {\\\\n            callback('Buzz' + prime);\\\\n            continue;\\\\n        }\\\\n        callback(prime.trim() || i);\\\\n    }\\\\n};\\\\n\\\\nmodule.exports = fizzbuzz;\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5c\\":
-        \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\"
+        \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
     file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
     index: 3,
@@ -339,7 +339,7 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
     }
   },
   {
-    id: \\"67aa820392d57ad7d93c384df468b87452a4ab89ea3e322a70b1dbb4350ce339\\",
+    id: \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\",
     source:
       \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
     deps: {},
@@ -351,13 +351,13 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
     entry: true,
     expose: false,
     file: \\"asset-pipe-js-writer/test/mock/main.js\\",
-    id: \\"eae04b1ae2a4f9822b36015cb458186dcec69821e785f796f243d2ad994dd768\\",
+    id: \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\",
     order: 0,
     source:
       \\"'use strict';\\\\n\\\\nrequire('asset-pipe-test-es5a');\\\\nconsole.log('main says hello');\\\\n\\",
     deps: {
       \\"asset-pipe-test-es5a\\":
-        \\"da34d0ca36dc47074b9f140adea29001e5dd86f6457e27f91134f1f7de8eb094\\"
+        \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\"
     },
     index: 5,
     indexDeps: {
