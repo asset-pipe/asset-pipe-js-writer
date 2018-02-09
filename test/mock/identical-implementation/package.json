@@ -1,0 +1,15 @@
+{
+  "name": "identical-implementation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "object.entries": "^1.0.4",
+    "object.values": "^1.0.4"
+  }
+}
