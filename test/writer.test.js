@@ -51,3 +51,20 @@ test('feed is not deduped', async () => {
 
     expect(clean(result)).toMatchSnapshot();
 });
+
+test('different modules with identical source code do produce same id hash.', async () => {
+    expect.hasAssertions();
+    const writer = new Writer('./test/mock/identical-implementation');
+    const feed = await getStream(writer.bundle());
+
+    let identicalHashes = false;
+    const hashes = new Map();
+    for (const feedItem of feed) {
+        if (hashes.has(feedItem.id)) {
+            identicalHashes = true;
+            break;
+        }
+        hashes.set(feedItem.id, true);
+    }
+    expect(identicalHashes).toBe(false);
+});
