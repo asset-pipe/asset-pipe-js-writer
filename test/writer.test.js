@@ -4,13 +4,7 @@ const getStream = require('./helpers/get-stream');
 const Writer = require('../');
 const prettier = require('prettier');
 
-const clean = body =>
-    prettier.format(
-        JSON.stringify(body, null, 2).replace(
-            /"file":\s".*\/asset-pipe\//g,
-            '"file": "'
-        )
-    );
+const clean = body => prettier.format(JSON.stringify(body, null, 2));
 
 test('writer produces a feed of dependencies with ids hashed', async () => {
     expect.hasAssertions();

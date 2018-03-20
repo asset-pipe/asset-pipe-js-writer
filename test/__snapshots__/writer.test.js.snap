@@ -108,7 +108,7 @@ exports[`feed is not deduped 1`] = `
       \\"asset-pipe-test-es5b\\":
         \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5a/lib/main.js\\",
     index: 1,
     indexDeps: {
       \\"./util.js\\": 2,
@@ -123,7 +123,7 @@ exports[`feed is not deduped 1`] = `
       \\"asset-pipe-test-es5c\\":
         \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
+    file: \\"node_modules/asset-pipe-test-es5a/lib/util.js\\",
     index: 2,
     indexDeps: {
       \\"asset-pipe-test-es5c\\": 4
@@ -137,7 +137,7 @@ exports[`feed is not deduped 1`] = `
       \\"asset-pipe-test-es5c\\":
         \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5b/main.js\\",
     index: 3,
     indexDeps: {
       \\"asset-pipe-test-es5c\\": 4
@@ -148,7 +148,7 @@ exports[`feed is not deduped 1`] = `
     source:
       \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
     deps: {},
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5c/main.js\\",
     index: 4,
     indexDeps: {}
   },
@@ -159,7 +159,7 @@ exports[`feed is not deduped 1`] = `
       \\"./main\\":
         \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\"
     },
-    file: \\"asset-pipe-js-writer/test/mock/common.js\\",
+    file: \\"test/mock/common.js\\",
     index: 5,
     indexDeps: {
       \\"./main\\": 6
@@ -173,7 +173,7 @@ exports[`feed is not deduped 1`] = `
       \\"asset-pipe-test-es5a\\":
         \\"0e0c593f5f89dd62af488699574c678b4726ad1e3de2e0a81141f3dfc02b6037\\"
     },
-    file: \\"asset-pipe-js-writer/test/mock/main.js\\",
+    file: \\"test/mock/main.js\\",
     index: 6,
     indexDeps: {
       \\"asset-pipe-test-es5a\\": 1
@@ -182,7 +182,7 @@ exports[`feed is not deduped 1`] = `
   {
     entry: true,
     expose: false,
-    file: \\"asset-pipe-js-writer/test/mock/no-dedupe.js\\",
+    file: \\"test/mock/no-dedupe.js\\",
     id: \\"c98cd71bd49ced468ea7011b8733d1a4f940f28f9336797fe7c24687d2d82dc6\\",
     order: 0,
     source: \\"'use strict';\\\\n\\\\nrequire('./common');\\\\nrequire('./main');\\\\n\\",
@@ -216,7 +216,7 @@ exports[`options object passes options on to browserify 1`] = `
       \\"asset-pipe-test-es5b\\":
         \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5a/lib/main.js\\",
     index: 1,
     indexDeps: {
       \\"./util.js\\": 2,
@@ -233,7 +233,7 @@ exports[`options object passes options on to browserify 1`] = `
       \\"asset-pipe-test-es5c\\":
         \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
+    file: \\"node_modules/asset-pipe-test-es5a/lib/util.js\\",
     index: 2,
     indexDeps: {
       \\"asset-pipe-test-es5c\\": 4
@@ -249,7 +249,7 @@ exports[`options object passes options on to browserify 1`] = `
       \\"asset-pipe-test-es5c\\":
         \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5b/main.js\\",
     index: 3,
     indexDeps: {
       \\"asset-pipe-test-es5c\\": 4
@@ -262,7 +262,7 @@ exports[`options object passes options on to browserify 1`] = `
     source:
       \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
     deps: {},
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5c/main.js\\",
     index: 4,
     indexDeps: {},
     sourceRoot: \\"file://localhost\\",
@@ -271,7 +271,7 @@ exports[`options object passes options on to browserify 1`] = `
   {
     entry: true,
     expose: false,
-    file: \\"asset-pipe-js-writer/test/mock/main.js\\",
+    file: \\"test/mock/main.js\\",
     id: \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\",
     order: 0,
     source:
@@ -303,7 +303,7 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
       \\"asset-pipe-test-es5b\\":
         \\"ecd571b921d0e82abe77bd7cbe5c97c9186504c86f840fb8bdc0a372310231c3\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5a/lib/main.js\\",
     index: 1,
     indexDeps: {
       \\"./util.js\\": 2,
@@ -318,7 +318,7 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
       \\"asset-pipe-test-es5c\\":
         \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5a/lib/util.js\\",
+    file: \\"node_modules/asset-pipe-test-es5a/lib/util.js\\",
     index: 2,
     indexDeps: {
       \\"asset-pipe-test-es5c\\": 4
@@ -332,7 +332,7 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
       \\"asset-pipe-test-es5c\\":
         \\"a8307dbbd8da4b0752187d0f5aaf7184da3b85743e87ec77110ed88e36370047\\"
     },
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5b/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5b/main.js\\",
     index: 3,
     indexDeps: {
       \\"asset-pipe-test-es5c\\": 4
@@ -343,14 +343,14 @@ exports[`writer produces a feed of dependencies with ids hashed 1`] = `
     source:
       \\"'use strict';\\\\n\\\\n function prime (num) {\\\\n    if (num < 4) {\\\\n        return true;\\\\n    }\\\\n    var max = Math.ceil(Math.sqrt(num));\\\\n    for (var i = 2; i <= max; i++) {\\\\n        if (num % i === 0) {\\\\n            return false;\\\\n        }\\\\n    }\\\\n    return true;\\\\n};\\\\n\\\\nmodule.exports = prime;\\\\n\\",
     deps: {},
-    file: \\"asset-pipe-js-writer/node_modules/asset-pipe-test-es5c/main.js\\",
+    file: \\"node_modules/asset-pipe-test-es5c/main.js\\",
     index: 4,
     indexDeps: {}
   },
   {
     entry: true,
     expose: false,
-    file: \\"asset-pipe-js-writer/test/mock/main.js\\",
+    file: \\"test/mock/main.js\\",
     id: \\"6bc16f4686fe6cf0bb03134e009a29a452568f28f6b0e1174f8d75d47366a6ec\\",
     order: 0,
     source:
