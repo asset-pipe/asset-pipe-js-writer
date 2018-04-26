@@ -9,6 +9,7 @@ notifications:
 node_js:
   - '9'
   - '8'
+  - '10'
 script:
   - npm test
   - npm run lint
