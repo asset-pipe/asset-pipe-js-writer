@@ -42,7 +42,7 @@
     "jest": "^22.1.4",
     "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
-    "semantic-release": "^15.1.4"
+    "semantic-release": "^15.11.0"
   },
   "scripts": {
     "lint": "eslint .",
